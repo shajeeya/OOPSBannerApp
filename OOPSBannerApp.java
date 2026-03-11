@@ -1,20 +1,50 @@
-public class OOPSBannerApp
-{
-	public static void main(String[] args)
-	{
-		String[] lines = {
-            String.join(" ", "   ***   ", "   ", "   ***   ", "   ", "*******  ", "   ", "   ***** "),
-            String.join(" ", " **   ** ", "   ", " **   ** ", "   ", "**    ** ", "   ", " **    **"),
-            String.join(" ", "**     **", "   ", "**     **", "   ", "**    ***", "   ", "**       "),
-            String.join(" ", "**     **", "   ", "**     **", "   ", "**    ** ", "   ", "  *****  "),
-            String.join(" ", "**     **", "   ", "**     **", "   ", "*******  ", "   ", "      ***"),
-            String.join(" ", " **   ** ", "   ", " **   ** ", "   ", "**       ", "   ", "**   *** "),
-            String.join(" ", "   ***   ", "   ", "   ***   ", "   ", "**       ", "   ", " ******  ")
-        };
+public class OOPSBannerApp {
 
-        for (String line : lines) 
-		{
-            System.out.println(line);
+    static String[] getOPattern() {
+        return new String[]{
+            "   ***   ",
+            " **   ** ",
+            "**     **",
+            "**     **",
+            "**     **",
+            " **   ** ",
+            "   ***   "
+        };
+    }
+
+    static String[] getPPattern() {
+        return new String[]{
+            "*******  ",
+            "**    ** ",
+            "**    ***",
+            "**    ** ",
+            "*******  ",
+            "**       ",
+            "**       "
+        };
+    }
+
+    static String[] getSPattern() {
+        return new String[]{
+            "   ***** ",
+            " **    **",
+            "**       ",
+            "  *****  ",
+            "      ***",
+            "**   *** ",
+            " ******  "
+        };
+    }
+
+    public static void main(String[] args) {
+
+        String[] o1 = getOPattern();
+        String[] o2 = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
+
+        for (int i = 0; i < o1.length; i++) {
+            System.out.println(String.join(" ", o1[i], o2[i], p[i], s[i]));
         }
-	}
+    }
 }
